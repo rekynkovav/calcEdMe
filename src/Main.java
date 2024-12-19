@@ -1,8 +1,4 @@
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
@@ -23,12 +19,11 @@ public class Main {
         String[] arrayStr = input.split(" ");
         int x = Integer.parseInt(arrayStr[0]);
         int x2 = Integer.parseInt(arrayStr[2]);
-        char c = arrayStr[1].charAt(0);
         String result = "";
         if (x < 0 || x > 10 && x2 < 0 || x2 > 11 && input.length() > 3) {
            throw  new Exception();
         }else{
-            switch ((int) c) {
+            switch ((int) arrayStr[1].charAt(0)) {
                 case 43:
                     result = x + x2 + "";
                     break;
