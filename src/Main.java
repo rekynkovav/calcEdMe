@@ -18,7 +18,9 @@ public class Main {
         String[] arrayStr = input.split(" ");
         int variableOne = Integer.parseInt(arrayStr[0]);
         int variableTwo = Integer.parseInt(arrayStr[2]);
+
         volidate(variableOne,variableTwo,input.length());
+
         String operator = arrayStr[1];
         String result = "";
 
