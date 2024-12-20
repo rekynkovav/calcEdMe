@@ -16,32 +16,38 @@ public class Main {
     public static String calc(String input) throws Exception {
 
         String[] arrayStr = input.split(" ");
-        int x = Integer.parseInt(arrayStr[0]);
-        int x2 = Integer.parseInt(arrayStr[2]);
-        String c = arrayStr[1];
+        int variableOne = Integer.parseInt(arrayStr[0]);
+        int variableTwo = Integer.parseInt(arrayStr[2]);
+        volidate(variableOne,variableTwo,input.length());
+        String operator = arrayStr[1];
         String result = "";
-        if (x < 1 || x > 10 || x2 < 1 || x2 > 10) {
-            throw new Exception("Значения должны быть от 1 до 10 включительно");
-        }
-        if (input.length() > 3){
-            throw new Exception("Данные передаются в одну строку: a + b, a - b, a * b, a / b");
-        }
-        switch (c) {
+
+        switch (operator) {
             case "+":
-                result = x + x2 + "";
+                result = variableOne + variableTwo + "";
                 break;
             case "*":
-                result = x * x2 + "";
+                result = variableOne * variableTwo + "";
                 break;
             case "-":
-                result = x - x2 + "";
+                result = variableOne - variableTwo + "";
                 break;
             case "/":
-                result = x / x2 + "";
+                result = variableOne / variableTwo + "";
                 break;
             default:
                 System.out.println("Вы ввели неверное значение");
         }
         return result;
+    }
+
+    public static void volidate(int variableOne, int variableTwo, int length) throws Exception{
+
+        if (variableOne < 1 || variableOne > 10 || variableTwo < 1 || variableTwo > 10) {
+            throw new Exception("Значения должны быть от 1 до 10 включительно");
+        }
+        if (length > 3){
+            throw new Exception("Данные передаются в одну строку: a + b, a - b, a * b, a / b");
+        }
     }
 }
