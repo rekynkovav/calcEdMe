@@ -5,8 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));){
             System.out.println(calc(bufferedReader.readLine()));
         } catch (Exception e) {
             System.out.println("Ошибка ввода данных");
